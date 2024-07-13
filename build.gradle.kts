@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-  compileOnly("com.github.Minestom:Minestom:5c23713c03")
+  compileOnly("net.minestom:minestom-snapshots:2be6f9c507")
 }
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
