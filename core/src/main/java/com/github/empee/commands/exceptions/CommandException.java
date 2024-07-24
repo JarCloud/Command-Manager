@@ -1,4 +1,4 @@
-package net.jarcloud.server.commands.exceptions;
+package com.github.empee.commands.exceptions;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,11 +1,10 @@
-package net.jarcloud.server.commands;
+package com.github.empee.commands;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import net.jarcloud.server.commands.exceptions.CommandException;
-import net.jarcloud.server.commands.suggestions.SuggestionContext;
-import net.jarcloud.server.commands.utils.CommandReader;
+import com.github.empee.commands.exceptions.CommandException;
+import com.github.empee.commands.suggestions.SuggestionContext;
+import com.github.empee.commands.utils.CommandReader;
 
 import java.util.function.BiConsumer;
 

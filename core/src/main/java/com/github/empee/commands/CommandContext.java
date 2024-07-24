@@ -1,9 +1,9 @@
-package net.jarcloud.server.commands;
+package com.github.empee.commands;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import net.jarcloud.server.commands.exceptions.ArgumentException;
-import net.jarcloud.server.commands.utils.CommandReader;
+import com.github.empee.commands.exceptions.ArgumentException;
+import com.github.empee.commands.utils.CommandReader;
 
 import java.util.HashMap;
 import java.util.Map;

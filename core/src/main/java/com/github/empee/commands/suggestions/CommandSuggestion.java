@@ -1,4 +1,4 @@
-package net.jarcloud.server.commands.suggestions;
+package com.github.empee.commands.suggestions;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

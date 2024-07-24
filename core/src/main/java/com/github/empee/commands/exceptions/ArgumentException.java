@@ -1,7 +1,7 @@
-package net.jarcloud.server.commands.exceptions;
+package com.github.empee.commands.exceptions;
 
 import lombok.Getter;
-import net.jarcloud.server.commands.arguments.Argument;
+import com.github.empee.commands.arguments.Argument;
 
 @Getter
 public class ArgumentException extends CommandException {

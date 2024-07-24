@@ -1,12 +1,12 @@
-package net.jarcloud.server.commands.arguments.numbers;
+package com.github.empee.commands.arguments.numbers;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import net.jarcloud.server.commands.CommandContext;
-import net.jarcloud.server.commands.suggestions.CommandSuggestion;
-import net.jarcloud.server.commands.arguments.Argument;
-import net.jarcloud.server.commands.exceptions.ArgumentException;
-import net.jarcloud.server.commands.arguments.properties.DoubleProperties;
+import com.github.empee.commands.CommandContext;
+import com.github.empee.commands.arguments.Argument;
+import com.github.empee.commands.arguments.properties.IntegerProperties;
+import com.github.empee.commands.suggestions.CommandSuggestion;
+import com.github.empee.commands.exceptions.ArgumentException;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -17,27 +17,27 @@ import java.util.stream.Stream;
 
 @Getter
 @RequiredArgsConstructor(staticName = "of")
-public class DoubleArgument implements Argument<Double> {
+public class IntArgument implements Argument<Integer> {
 
-  public static final String ERROR_NOT_A_DOUBLE = "double_not_valid";
+  public static final String ERROR_NOT_AN_INTEGER = "int_not_valid";
   public static final String ERROR_TOO_HIGH = "number_too_high";
   public static final String ERROR_TOO_LOW = "number_too_low";
 
   private final String id;
   private Function<CommandContext<?>, List<CommandSuggestion>> suggestions;
-  private Function<CommandContext<?>, Double> defaultValue;
+  private Function<CommandContext<?>, Integer> defaultValue;
   private Function<CommandContext<?>, ?> executor;
 
-  private Double min;
-  private Double max;
+  private Integer min;
+  private Integer max;
 
   public String getParser() {
-    return "brigadier:double";
+    return "brigadier:integer";
   }
 
-  public @NotNull Double parse(CommandContext context, String input) {
+  public @NotNull Integer parse(CommandContext context, String input) {
     try {
-      var result = Double.parseDouble(input);
+      var result = Integer.parseInt(input);
       if (min != null && min > result) {
         throw ArgumentException.parsing(this, input, ERROR_TOO_LOW);
       }
@@ -48,51 +48,52 @@ public class DoubleArgument implements Argument<Double> {
 
       return result;
     } catch (IllegalArgumentException e) {
-      throw ArgumentException.parsing(this, input, ERROR_NOT_A_DOUBLE);
+      throw ArgumentException.parsing(this, input, ERROR_NOT_AN_INTEGER);
     }
   }
 
   @Override
-  public DoubleProperties getProperties() {
-    return DoubleProperties.builder()
+  public IntegerProperties getProperties() {
+    return IntegerProperties.builder()
         .min(min)
         .max(max)
         .build();
   }
 
 
-  public DoubleArgument withMin(double min) {
+
+  public IntArgument withMin(int min) {
     this.min = min;
     return this;
   }
-  public DoubleArgument withMax(double max) {
+  public IntArgument withMax(int max) {
     this.max = max;
     return this;
   }
 
-  public DoubleArgument withExecutor(Function<CommandContext<?>, ?> executor) {
+  public IntArgument withExecutor(Function<CommandContext<?>, ?> executor) {
     this.executor = executor;
     return this;
   }
-  public DoubleArgument withExecutor(Consumer<CommandContext<?>> executor) {
+  public IntArgument withExecutor(Consumer<CommandContext<?>> executor) {
     return withExecutor((ctx) -> {
       executor.accept(ctx);
       return null;
     });
   }
 
-  public DoubleArgument withSuggestions(String... values) {
+  public IntArgument withSuggestions(String... values) {
     suggestions = sender -> Stream.of(values)
         .map(v -> CommandSuggestion.of(v, null))
         .collect(Collectors.toList());
 
     return this;
   }
-  public DoubleArgument withSuggestions(Function<CommandContext<?>, List<CommandSuggestion>> value) {
+  public IntArgument withSuggestions(Function<CommandContext<?>, List<CommandSuggestion>> value) {
     suggestions = value;
     return this;
   }
-  public DoubleArgument withDefaultValue(Function<CommandContext<?>, Double> value) {
+  public IntArgument withDefaultValue(Function<CommandContext<?>, Integer> value) {
     defaultValue = value;
     return this;
   }

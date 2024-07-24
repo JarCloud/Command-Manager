@@ -1,4 +1,4 @@
-package net.jarcloud.server.commands.arguments.properties;
+package com.github.empee.commands.arguments.properties;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

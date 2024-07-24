@@ -2,7 +2,7 @@ package com.github.empee.commands.minestom.listeners;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.jarcloud.server.commands.CommandManager;
+import com.github.empee.commands.CommandManager;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.EventDispatcher;

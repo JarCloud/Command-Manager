@@ -1,4 +1,4 @@
-package net.jarcloud.server.commands.utils;
+package com.github.empee.commands.utils;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

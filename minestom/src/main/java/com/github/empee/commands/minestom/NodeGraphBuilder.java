@@ -2,8 +2,8 @@ package com.github.empee.commands.minestom;
 
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
-import net.jarcloud.server.commands.CommandNode;
-import net.jarcloud.server.commands.arguments.Argument;
+import com.github.empee.commands.CommandNode;
+import com.github.empee.commands.arguments.Argument;
 import net.minestom.server.entity.Player;
 import net.minestom.server.network.packet.server.play.DeclareCommandsPacket.Node;
 import net.minestom.server.network.packet.server.play.DeclareCommandsPacket.NodeType;

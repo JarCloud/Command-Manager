@@ -1,8 +1,8 @@
 package com.github.empee.commands.minestom.listeners;
 
 import lombok.RequiredArgsConstructor;
-import net.jarcloud.server.commands.CommandManager;
-import net.jarcloud.server.commands.suggestions.SuggestionContext;
+import com.github.empee.commands.CommandManager;
+import com.github.empee.commands.suggestions.SuggestionContext;
 import net.kyori.adventure.text.Component;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.entity.Player;

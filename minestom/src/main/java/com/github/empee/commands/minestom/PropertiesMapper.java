@@ -1,9 +1,9 @@
 package com.github.empee.commands.minestom;
 
-import net.jarcloud.server.commands.arguments.properties.ArgumentProperties;
-import net.jarcloud.server.commands.arguments.properties.DoubleProperties;
-import net.jarcloud.server.commands.arguments.properties.IntegerProperties;
-import net.jarcloud.server.commands.arguments.properties.StringProperties;
+import com.github.empee.commands.arguments.properties.ArgumentProperties;
+import com.github.empee.commands.arguments.properties.DoubleProperties;
+import com.github.empee.commands.arguments.properties.IntegerProperties;
+import com.github.empee.commands.arguments.properties.StringProperties;
 import net.minestom.server.utils.binary.BinaryWriter;
 
 import java.util.HashMap;

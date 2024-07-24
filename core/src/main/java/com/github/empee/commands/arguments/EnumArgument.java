@@ -1,11 +1,11 @@
-package net.jarcloud.server.commands.arguments;
+package com.github.empee.commands.arguments;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import net.jarcloud.server.commands.CommandContext;
-import net.jarcloud.server.commands.arguments.properties.StringProperties;
-import net.jarcloud.server.commands.suggestions.CommandSuggestion;
-import net.jarcloud.server.commands.exceptions.ArgumentException;
+import com.github.empee.commands.CommandContext;
+import com.github.empee.commands.arguments.properties.StringProperties;
+import com.github.empee.commands.suggestions.CommandSuggestion;
+import com.github.empee.commands.exceptions.ArgumentException;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
