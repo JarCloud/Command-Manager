@@ -1,9 +1,9 @@
 package com.github.empee.commands;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import com.github.empee.commands.exceptions.ArgumentException;
 import com.github.empee.commands.utils.CommandReader;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
 import java.util.Map;

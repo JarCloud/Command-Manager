@@ -3,10 +3,10 @@ package com.github.empee.commands.arguments;
 import com.github.empee.commands.CommandContext;
 import com.github.empee.commands.arguments.properties.ArgumentProperties;
 import com.github.empee.commands.exceptions.ArgumentException;
+import com.github.empee.commands.suggestions.CommandSuggestion;
 import com.github.empee.commands.suggestions.SuggestionContext;
 import com.github.empee.commands.suggestions.SuggestionType;
 import com.github.empee.commands.utils.CommandReader;
-import com.github.empee.commands.suggestions.CommandSuggestion;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

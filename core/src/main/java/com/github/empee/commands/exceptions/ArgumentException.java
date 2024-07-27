@@ -1,7 +1,7 @@
 package com.github.empee.commands.exceptions;
 
-import lombok.Getter;
 import com.github.empee.commands.arguments.Argument;
+import lombok.Getter;
 
 @Getter
 public class ArgumentException extends CommandException {

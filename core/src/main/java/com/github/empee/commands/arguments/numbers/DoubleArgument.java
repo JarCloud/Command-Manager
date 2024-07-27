@@ -1,12 +1,12 @@
 package com.github.empee.commands.arguments.numbers;
 
+import com.github.empee.commands.CommandContext;
+import com.github.empee.commands.arguments.Argument;
+import com.github.empee.commands.arguments.properties.DoubleProperties;
+import com.github.empee.commands.exceptions.ArgumentException;
+import com.github.empee.commands.suggestions.CommandSuggestion;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import com.github.empee.commands.CommandContext;
-import com.github.empee.commands.suggestions.CommandSuggestion;
-import com.github.empee.commands.arguments.Argument;
-import com.github.empee.commands.exceptions.ArgumentException;
-import com.github.empee.commands.arguments.properties.DoubleProperties;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

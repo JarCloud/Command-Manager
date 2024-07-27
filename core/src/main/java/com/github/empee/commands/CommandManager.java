@@ -1,10 +1,11 @@
 package com.github.empee.commands;
 
-import lombok.Getter;
-import lombok.Setter;
 import com.github.empee.commands.exceptions.CommandException;
 import com.github.empee.commands.suggestions.SuggestionContext;
 import com.github.empee.commands.utils.CommandReader;
+import lombok.Getter;
+import lombok.Setter;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
 
@@ -40,6 +41,7 @@ public class CommandManager<S> {
     return null;
   }
 
+  @Nullable
   public SuggestionContext getSuggestions(S source, String input) {
     return root.getSuggestions(CommandContext.of(new CommandReader(input), source));
   }

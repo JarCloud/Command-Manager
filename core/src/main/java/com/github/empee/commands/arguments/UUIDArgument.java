@@ -2,9 +2,9 @@ package com.github.empee.commands.arguments;
 
 import com.github.empee.commands.CommandContext;
 import com.github.empee.commands.exceptions.ArgumentException;
+import com.github.empee.commands.suggestions.CommandSuggestion;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import com.github.empee.commands.suggestions.CommandSuggestion;
 
 import java.util.List;
 import java.util.UUID;

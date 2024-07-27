@@ -2,10 +2,10 @@ package com.github.empee.commands.arguments;
 
 import com.github.empee.commands.CommandContext;
 import com.github.empee.commands.arguments.properties.StringProperties;
+import com.github.empee.commands.suggestions.CommandSuggestion;
 import com.github.empee.commands.utils.CommandReader;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import com.github.empee.commands.suggestions.CommandSuggestion;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
