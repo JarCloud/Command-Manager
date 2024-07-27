@@ -2,6 +2,8 @@
 build/
 !gradle/wrapper/gradle-wrapper.jar
 
+gradle.properties
+
 ### IntelliJ IDEA ###
 .idea
 out/
