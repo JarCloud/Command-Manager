@@ -8,13 +8,16 @@ version = findProperty("tag") ?: "0.0.1-SNAPSHOT"
 
 dependencies {
   compileOnly("org.jetbrains:annotations:24.1.0")
-  compileOnly("net.minestom:minestom-snapshots:2be6f9c507")
+  compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 
+  implementation("me.lucko:commodore:2.2")
   implementation("io.github.mr-empee.command-forge:core:0.0.1")
+
+  api("io.github.mr-empee.command-forge:core:0.0.1")
 }
 
 mavenPublishing {
-  coordinates("io.github.mr-empee.command-forge", "minestom", version.toString())
+  coordinates("io.github.mr-empee.command-forge", "bukkit", version.toString())
 
   pom {
     name.set("Command Forge")
@@ -45,4 +48,4 @@ mavenPublishing {
   }
 }
 
-java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(11))

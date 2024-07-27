@@ -2,8 +2,6 @@ package com.github.empee.commands.spigot;
 
 import com.github.empee.commands.CommandNode;
 import com.github.empee.commands.arguments.Argument;
-import com.github.empee.commands.arguments.numbers.DoubleArgument;
-import com.github.empee.commands.arguments.numbers.IntArgument;
 import com.github.empee.commands.arguments.properties.ArgumentProperties;
 import com.github.empee.commands.arguments.properties.DoubleProperties;
 import com.github.empee.commands.arguments.properties.IntegerProperties;
@@ -16,7 +14,6 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import lombok.experimental.UtilityClass;
-import org.jetbrains.annotations.NotNull;
 
 @UtilityClass
 public class CommodoreAdapter {

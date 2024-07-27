@@ -5,12 +5,12 @@ import com.github.empee.commands.suggestions.CommandSuggestion;
 import com.github.empee.commands.suggestions.SuggestionContext;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +27,9 @@ public class BukkitCommandTabCompleter implements TabCompleter {
     }
 
     SuggestionContext context = commandManager.getSuggestions(source, rawCmd.toString());
+    if (context == null) {
+      return Collections.emptyList();
+    }
 
     return context.getSuggestions().stream()
         .map(CommandSuggestion::getValue)

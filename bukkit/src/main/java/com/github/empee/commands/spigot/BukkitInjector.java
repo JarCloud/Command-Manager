@@ -47,7 +47,7 @@ public class BukkitInjector {
   }
 
   @SneakyThrows
-  public void register(CommandNode<?> command) {
+  public void inject(CommandNode<? extends CommandSender> command) {
     PluginCommand bukkitCommand = pluginCommandConstructor.newInstance(command.getLiteral(), plugin);
 
     List<String> aliases = command.getAliases().stream()
