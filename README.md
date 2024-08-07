@@ -1,3 +1,7 @@
+# Usage
+- Bukkit: `io.github.mr-empee.command-forge:bukkit` - Latest Version: ![Bukkit Maven Central Version](https://img.shields.io/maven-central/v/io.github.mr-empee.command-forge/bukkit)
+- Minestom: `io.github.mr-empee.command-forge:minestom` - Latest Version: ![Minestom Maven Central Version](https://img.shields.io/maven-central/v/io.github.mr-empee.command-forge/minestom)
+
 # Command Creation
 ```java
   public CommandNode<CommandSender> get() {
