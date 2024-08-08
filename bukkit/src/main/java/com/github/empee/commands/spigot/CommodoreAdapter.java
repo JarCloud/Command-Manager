@@ -62,7 +62,7 @@ public class CommodoreAdapter {
   }
 
   private ArgumentType adaptType(Argument<?> argument) {
-    ArgumentProperties properties = argument.getProperties();
+    ArgumentProperties properties = argument.getParser().getProperties();
     if (properties == null) {
       return StringArgumentType.word();
     }
