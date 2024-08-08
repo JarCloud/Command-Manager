@@ -7,35 +7,30 @@ import com.github.empee.commands.suggestions.CommandSuggestion;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Getter
-@RequiredArgsConstructor(staticName = "of")
-public class EnumArgument<E extends Enum<E>> implements Argument<E> {
+@RequiredArgsConstructor
+public class EnumParser<E extends Enum<E>> implements ArgumentParser<E> {
 
   public static final String ERROR_NOT_FOUND = "enum_not_found";
 
-  private final String id;
   private final Class<E> enumClass;
 
-  private Function<CommandContext<?>, E> defaultValue;
-  private Function<CommandContext<?>, ?> executor;
-  private Function<CommandContext<?>, List<CommandSuggestion>> suggestions = sender -> {
+  private final Function<CommandContext<?>, List<CommandSuggestion>> suggestions = sender -> {
     return Arrays.stream(getEnumClass().getEnumConstants())
         .map(e -> CommandSuggestion.of(e.name(), null))
         .collect(Collectors.toList());
   };
 
-  public String getParser() {
-    return "brigadier:string";
-  }
+  private final Function<CommandContext<?>, E> defaultValue = null;
 
-  public @NotNull E parse(CommandContext<?> context, String input) {
+  public E parse(CommandContext<?> context, String input) {
     try {
       return Enum.valueOf(enumClass, input.toUpperCase());
     } catch (IllegalArgumentException e) {
@@ -43,24 +38,8 @@ public class EnumArgument<E extends Enum<E>> implements Argument<E> {
     }
   }
 
-  @Override
   public StringProperties getProperties() {
     return StringProperties.word();
   }
 
-  public EnumArgument<E> withExecutor(Function<CommandContext<?>, ?> executor) {
-    this.executor = executor;
-    return this;
-  }
-  public EnumArgument<E> withExecutor(Consumer<CommandContext<?>> executor) {
-    return withExecutor((ctx) -> {
-      executor.accept(ctx);
-      return null;
-    });
-  }
-
-  public EnumArgument<E> withDefaultValue(Function<CommandContext<?>, E> value) {
-    defaultValue = value;
-    return this;
-  }
 }

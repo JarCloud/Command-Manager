@@ -122,14 +122,16 @@ public class CommandNode<S> {
     }
 
     for (Argument<?> argument : arguments) {
-      var raw = argument.read(reader);
+      int oldIndex = reader.getCursor();
+      argument.getParser().read(reader);
       if (!reader.canRead()) {
-        reader.back();
+        reader.setCursor(oldIndex);
+
         return argument.getSuggestions(context);
       }
 
       try {
-        context.set(argument.getId(), argument.parse(context, raw));
+        context.set(argument.getId(), argument.parse(context));
       } catch (Exception e) {
         return null;
       }

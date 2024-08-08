@@ -11,6 +11,8 @@ dependencies {
   compileOnly("net.minestom:minestom-snapshots:2be6f9c507")
 
   implementation("io.github.mr-empee.command-forge:core:0.0.1")
+
+  api("io.github.mr-empee.command-forge:core:0.0.1")
 }
 
 mavenPublishing {

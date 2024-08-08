@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.jetbrains.annotations.Nullable;
 
+@Getter
 @RequiredArgsConstructor
 public class CommandReader {
 
@@ -12,17 +13,10 @@ public class CommandReader {
   private static final char SEPARATOR = ' ';
   private static final char[] QUOTATIONS = {'\"', '\''};
 
-  @Getter
   private final String text;
 
-  @Getter @Setter
+  @Setter
   private int cursor;
-  private Integer oldCursor;
-
-  public void back() {
-    cursor = oldCursor;
-    oldCursor = null;
-  }
 
   public boolean hasReachedEnd() {
     return cursor >= text.length();
@@ -81,7 +75,6 @@ public class CommandReader {
       return; //Don't skip cause there isn't any ;)
     }
 
-    oldCursor = cursor;
     cursor += 1;
   }
 
@@ -104,7 +97,6 @@ public class CommandReader {
   public String readRemaining() {
     String result = text.substring(cursor);
 
-    oldCursor = cursor;
     cursor = text.length();
 
     return result;

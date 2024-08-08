@@ -4,7 +4,7 @@ plugins {
   id("com.vanniktech.maven.publish") version "0.28.0"
 }
 
-version = findProperty("tag") ?: "0.0.1-SNAPSHOT"
+version = findProperty("tag") ?: "0.2.0-SNAPSHOT"
 
 dependencies {
   compileOnly("org.jetbrains:annotations:24.1.0")
